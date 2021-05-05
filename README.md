@@ -37,7 +37,7 @@ python manage.py createsuperuser
 ```
 6. Make migrations for the app
 ```
-python manage.py makemigrations ig_miner_app
+python manage.py makemigrations catalog
 python manage.py migrate
 ```
 7. To start the development server
