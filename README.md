@@ -4,7 +4,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is simple website catalog with a list of courses, created with Django and Bootstrap.
+This project is a simple website catalog with a list of courses, created with Django and Bootstrap.
 	
 ## Technologies
 Project is created with:
