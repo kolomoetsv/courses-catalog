@@ -21,7 +21,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'add_course' %}" role="button">Add new course</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'form_add_course' %}" role="button">Add new course</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,16 +42,15 @@
                 </form>
                 <div class="list-group">
                         {% for course in object_list %}
-                          <a href="{{ course.get_absolute_url }}" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">{{ course.title }}</h5>
-                                <small class="text-muted">{{ course.start_date }} - {{ course.end_date }}</small>
-                                <a href="{% url 'index' %}{{course.pk}}/edit" class="btn btn-primary" role="button" aria-pressed="true" style="height:50px; font-size:14px;">Edit</a>
-                                <a href="{% url 'index' %}{{course.pk}}/delete" class="btn btn-secondary" role="button" aria-pressed="true" style="height:50px; font-size:14px;">Delete</a>
-
-                            </div>
-                            <p class="mb-1 text-left">The number of lectures: {{ course.number_of_lectures }}</p>
-                          </a>
+                              <a href="{{ course.get_absolute_url }}" class="list-group-item list-group-item-action flex-column align-items-start mb-3">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ course.title }}</h5>
+                                    <small class="text-muted">{{ course.start_date }} - {{ course.end_date }}</small>
+                                    <a href="{% url 'index' %}{{course.pk}}/edit" class="btn btn-primary" role="button" aria-pressed="true" style="height:50px; font-size:14px;">Edit</a>
+                                    <a href="{% url 'index' %}{{course.pk}}/delete" class="btn btn-secondary" role="button" aria-pressed="true" style="height:50px; font-size:14px;">Delete</a>
+                                </div>
+                                <p class="mb-1 text-left">The number of lectures: {{ course.number_of_lectures }}</p>
+                              </a>
                         {% endfor %}
                 </div>
                 {% endblock %}
